@@ -11,8 +11,7 @@
     <div class="toggle-button-cover">
       <div class="button-cover">
         <div class="button r" id="slider">
-          <input type="checkbox" id="push-slider" class="checkbox" offclick="startTimer(this)"
-            onclick="startTimer(this)">
+          <input type="checkbox" id="push-slider" class="checkbox" offclick="startTimer(this)" onclick="startTimer(this)">
           <div class="knobs">
             <span></span>
           </div>
@@ -22,8 +21,7 @@
         <br>
         <br>
         <br>
-        <div id="timer" class="timer" style="text-align: right;">Wait for <span id="countdown"></span>s seconds to
-          change your input.</div>
+        <div id="timer" class="timer" style="text-align: right;">Wait for <span id="countdown"></span>s seconds to change your input.</div>
       </div>
     </div>
     <div id="response"></div>
@@ -51,7 +49,7 @@
 
   <script>
     function getData() {
-      fetch("https://api.thingspeak.com/channels/2053966/fields/4.json?results=1", {
+      fetch("https://api.thingspeak.com/channels/2053966/fields/7.json?results=1", {
         method: "GET",
       })
         .then(response => response.json())
@@ -73,13 +71,13 @@
 
 
   <body onload="getData()">
-
+    
 
 
     <script>
       document.getElementById("push-slider").addEventListener("click", function () {
         if (this.checked) {
-          fetch("https://api.thingspeak.com/update?api_key=JGMS30H5A71UCKZ1&field4=1", {
+          fetch("https://api.thingspeak.com/update?api_key=JGMS30H5A71UCKZ1&field7=1", {
             method: "GET"
           })
 
@@ -87,7 +85,7 @@
               console.error(error);
             });
         } else {
-          fetch("https://api.thingspeak.com/update?api_key=JGMS30H5A71UCKZ1&field4=0", {
+          fetch("https://api.thingspeak.com/update?api_key=JGMS30H5A71UCKZ1&field7=0", {
             method: "GET"
           })
         }
@@ -179,7 +177,7 @@
         padding: 0;
         margin: 0;
         opacity: 0;
-        cursor: pointer;
+        cursor: pointer  ;
         z-index: 3;
       }
 
@@ -260,37 +258,49 @@
 
 
 
-  <table align="center">
-    <tr>
-      <td colspan="2">
-        <h2 align="center" color="#00FFFF">Data Collection Dashboard</h2>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <iframe width="450" height="260" style="border: 1px solid #cccccc;"
-          src="https://thingspeak.com/channels/2053966/charts/1?bgcolor=%23ffffff&color=%2320b8d6&dynamic=true&results=60&type=line&update=15"></iframe>
-
-      </td>
-      <td>
-        <iframe width="450" height="260" style="border: 1px solid #cccccc;"
-          src="https://thingspeak.com/channels/2053966/charts/2?bgcolor=%23ffffff&color=%23cd20d6&dynamic=true&results=60&type=line&update=15"></iframe>
-
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <iframe width="450" height="260" style="border: 1px solid #cccccc;"
-          src="https://thingspeak.com/channels/2053966/charts/3?bgcolor=%23ffffff&color=%2308c9a9&dynamic=false&results=60&type=line"></iframe>
-
-      </td>
-      <td>
-        <iframe width="450" height="260" style="border: 1px solid #cccccc;"
-          src="https://thingspeak.com/channels/2053966/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
-
-      </td>
-    </tr>
-  </table>
+    <table align="center">
+      <tr>
+        <td colspan="2">
+          <h2 align="center" color="#00FFFF">Data Collection Dashboard</h2>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+            src="https://thingspeak.com/channels/2053966/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+        </td>
+        <td>
+          <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+            src="https://thingspeak.com/channels/2053966/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+            src="https://thingspeak.com/channels/2053966/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+        </td>
+        <td>
+          <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+            src="https://thingspeak.com/channels/2053966/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+            src="https://thingspeak.com/channels/2053966/charts/5?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+        </td>
+        <td>
+          <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+            src="https://thingspeak.com/channels/2053966/charts/6?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+            src="https://thingspeak.com/channels/2053966/charts/7?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+        </td>
+      </tr>
+    </table>
   </div>
 
 
