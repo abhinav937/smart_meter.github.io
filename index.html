@@ -51,7 +51,7 @@
 
   <script>
     function getData() {
-      fetch("https://api.thingspeak.com/channels/2053966/fields/7.json?results=1", {
+      fetch("https://api.thingspeak.com/channels/2053966/fields/4.json?results=1", {
         method: "GET",
       })
         .then(response => response.json())
@@ -79,7 +79,7 @@
     <script>
       document.getElementById("push-slider").addEventListener("click", function () {
         if (this.checked) {
-          fetch("https://api.thingspeak.com/update?api_key=JGMS30H5A71UCKZ1&field7=1", {
+          fetch("https://api.thingspeak.com/update?api_key=JGMS30H5A71UCKZ1&field4=1", {
             method: "GET"
           })
 
@@ -87,7 +87,7 @@
               console.error(error);
             });
         } else {
-          fetch("https://api.thingspeak.com/update?api_key=JGMS30H5A71UCKZ1&field7=0", {
+          fetch("https://api.thingspeak.com/update?api_key=JGMS30H5A71UCKZ1&field4=0", {
             method: "GET"
           })
         }
@@ -255,9 +255,16 @@
     </style>
   </body>
 
+  <table align="right">
+    <tr>
+      <td colspan="1">
+        <h1 align="center" style="color:#ce0505;">Energy Utilized</h1>
+      </td>
+    </tr>
 
-
-
+  <td>
+    <iframe width="350" height="230" style="border: 4px solid #76e6d3;" src="https://thingspeak.com/channels/2047045/widgets/627969"></iframe>
+  </td>
 
 
   <table align="center">
@@ -268,53 +275,41 @@
     </tr>
     <tr>
       <td>
-        <iframe width="450" height="260" style="border: 1px solid #cccccc;"
-          src="https://thingspeak.com/channels/2047045/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Average+Voltage&type=line&xaxis=Time&yaxis=Volts"></iframe>
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2047045/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Average+Voltage&type=line&xaxis=Time&yaxis=Volts"></iframe>
+
 
       </td>
       <td>
-        <iframe width="450" height="260" style="border: 1px solid #cccccc;"
-          src="https://thingspeak.com/channels/2047045/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Average+Current&type=line&xaxis=Time&yaxis=A"></iframe>
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2047045/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Average+Current&type=line&xaxis=Time&yaxis=A"></iframe>
+
 
       </td>
     </tr>
     <tr>
       <td>
-        <iframe width="450" height="260" style="border: 1px solid #cccccc;"
-          src="https://thingspeak.com/channels/2047045/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Average+Power&type=line&xaxis=Time&yaxis=Watts"></iframe>
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2047045/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Average+Power&type=line&xaxis=Time&yaxis=W"></iframe>
+
 
       </td>
       <td>
-        <iframe width="450" height="260" style="border: 1px solid #cccccc;"
-          src="https://thingspeak.com/channels/2047045/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Peak+Voltage&type=line&xaxis=Time&yaxis=Volts"></iframe>
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2047045/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Relay+Status&type=line&xaxis=Time"></iframe>
+
 
       </td>
     </tr>
     <tr>
       <td>
-        <iframe width="450" height="260" style="border: 1px solid #cccccc;"
-          src="https://thingspeak.com/channels/2047045/charts/5?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Peak+Current&type=line&xaxis=Time&yaxis=A"></iframe>
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2047045/charts/6?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Peak+Voltage&type=line&xaxis=Time&yaxis=Volts"></iframe>
+
 
       </td>
       <td>
-        <iframe width="450" height="260" style="border: 1px solid #cccccc;"
-          src="https://thingspeak.com/channels/2047045/charts/6?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Peak+Power&type=line&xaxis=Time&yaxis=Watts"></iframe>
-
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <iframe width="450" height="260" style="border: 1px solid #cccccc;"
-          src="https://thingspeak.com/channels/2047045/charts/7?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Total+Energy&type=line&xaxis=Time&yaxis=kWh"></iframe>
-
-      </td>
-      <td>
-        <iframe width="450" height="260" style="border: 1px solid #cccccc;"
-          src="https://thingspeak.com/channels/2047045/charts/8?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Relay+Status&type=line&xaxis=Time"></iframe>
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2047045/charts/7?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Peak+Current&type=line&xaxis=Time&yaxis=A"></iframe>
 
 
       </td>
     </tr>
+
   </table>
   </div>
 
